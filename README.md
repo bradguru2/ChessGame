@@ -7,11 +7,11 @@ Logical Rules:
 https://www.chessusa.com/chess-rules.html
 
 Logical Entities:
-- Color -> Red, and Green
+- PlayerColor -> Red, and Green
 - Direction -> Forward, Back, Left, Right, DiagonalUpLeft, DiagonalUpRight,
 DiagonalDownLeft, DiagonalDownRight, LUpLeft, LUpRight, LLeftUp, LRightUp,
 LDownLeft, LDownRight, LLeftDown, and LRightDown 
-- Player -> Color, Name, and PlayerType
+- Player -> PlayerColor, Name, and PlayerType
 - Ability -> Pawn, Knight, Bishop, Rook, Queen, and King
 - Piece -> Ability, History : Move[0..*], and Player
 - Location -> xIndex, and yIndex
