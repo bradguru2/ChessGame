@@ -27,5 +27,5 @@ LDownLeft, LDownRight, LLeftDown, and LRightDown
 - RookProcessor : RuleProcessor -> Rule[1..*]
 - QueenProcessor : RuleProcessor -> Rule[1..*]
 - KingProcessor : RuleProcessor -> Rule[1..*]
-- RuleResult -> Valid:Boolean and CapturedPiece:Piece[0..1]
+- RuleResult -> Matched:Rule[0..1] and CapturedPiece:Piece[0..1]
 
