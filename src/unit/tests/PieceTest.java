@@ -13,13 +13,13 @@ public class PieceTest {
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testPieceAbilityWhenNull() {
-		new Piece(new Player(PlayerColor.Green, PlayerType.Auto, "foo"), null);
+		new Piece(new Player(PlayerColor.Lower, PlayerType.Auto, "foo"), null);
 	}
 	
 	@Test
 	public void testGetHistory() {
 		String name = "testMe";
-		PlayerColor color = PlayerColor.Red;
+		PlayerColor color = PlayerColor.Upper;
 		PlayerType type = PlayerType.Manual;
 		Ability ability = Ability.Bishop;
 		
@@ -34,7 +34,7 @@ public class PieceTest {
 	@Test
 	public void testGetPlayer() {
 		String name = "testMe";
-		PlayerColor color = PlayerColor.Red;
+		PlayerColor color = PlayerColor.Upper;
 		PlayerType type = PlayerType.Manual;
 		Ability ability = Ability.Bishop;
 		
@@ -48,7 +48,7 @@ public class PieceTest {
 	@Test
 	public void testGetAbility() {
 		String name = "testMe";
-		PlayerColor color = PlayerColor.Red;
+		PlayerColor color = PlayerColor.Upper;
 		PlayerType type = PlayerType.Manual;
 		Ability ability = Ability.Bishop;
 		
@@ -62,7 +62,7 @@ public class PieceTest {
 	@Test
 	public void testSetAbility() {
 		String name = "testMe";
-		PlayerColor color = PlayerColor.Red;
+		PlayerColor color = PlayerColor.Upper;
 		PlayerType type = PlayerType.Manual;
 		Ability ability = Ability.Pawn;
 		Ability newAbility = Ability.Queen;

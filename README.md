@@ -7,7 +7,7 @@ Logical Rules:
 https://www.chessusa.com/chess-rules.html
 
 Logical Entities:
-- PlayerColor -> Red, and Green
+- PlayerColor -> Upper, and Lower
 - Direction -> Forward, Back, Left, Right, DiagonalUpLeft, DiagonalUpRight,
 DiagonalDownLeft, DiagonalDownRight, LUpLeft, LUpRight, LLeftUp, LRightUp,
 LDownLeft, LDownRight, LLeftDown, and LRightDown 

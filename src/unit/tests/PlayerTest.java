@@ -17,19 +17,19 @@ public class PlayerTest {
 	@Test(expected = IllegalArgumentException.class)
 	public void testPlayerTypeWhenNull() {
 		String name = "foo";
-		new Player(PlayerColor.Green, null , name);
+		new Player(PlayerColor.Lower, null , name);
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testPlayerNameWhenNull() {
 		String name = null;
-		new Player(PlayerColor.Green, PlayerType.Auto , name);
+		new Player(PlayerColor.Lower, PlayerType.Auto , name);
 	}
 	
 	@Test
 	public void testGetName() {
 		String name = "testMe";
-		PlayerColor color = PlayerColor.Red;
+		PlayerColor color = PlayerColor.Upper;
 		PlayerType type = PlayerType.Manual;
 		
 		Player player = new Player(color, type, name);
@@ -40,7 +40,7 @@ public class PlayerTest {
 	@Test
 	public void testGetColor() {
 		String name = "testMe";
-		PlayerColor color = PlayerColor.Green;
+		PlayerColor color = PlayerColor.Lower;
 		PlayerType type = PlayerType.Manual;
 		
 		Player player = new Player(color, type, name);
@@ -51,7 +51,7 @@ public class PlayerTest {
 	@Test
 	public void testGetPlayerType() {
 		String name = "testMe";
-		PlayerColor color = PlayerColor.Red;
+		PlayerColor color = PlayerColor.Upper;
 		PlayerType type = PlayerType.Auto;
 		
 		Player player = new Player(color, type, name);

@@ -17,7 +17,15 @@ public class Cell {
 	 * @param theColor the color of the Cell
 	 * @param theLocation the location of the Cell
 	 */
-	public Cell(CellColor theColor, Location theLocation) {
+	public Cell(CellColor theColor, Location theLocation) throws IllegalArgumentException {
+		if(theColor == null) {
+			throw new IllegalArgumentException("theColor is null");
+		}
+		
+		if(theLocation == null) {
+			throw new IllegalArgumentException("theLocation is null");
+		}
+		
 		color = theColor;
 		location = theLocation;
 		piece = null;

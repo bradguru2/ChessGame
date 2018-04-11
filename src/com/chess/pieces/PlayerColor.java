@@ -6,6 +6,6 @@ package com.chess.pieces;
  *
  */
 public enum PlayerColor {
-	Red,
-	Green
+	Upper,
+	Lower
 }
