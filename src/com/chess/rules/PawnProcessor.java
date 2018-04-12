@@ -13,7 +13,7 @@ import static com.chess.rules.RuleConstants.*;
 /**
  * Pawns have their own set of rules to enforce
  * @author bradley
- *
+ * TODO: Remove Jump capability on first move
  */
 public class PawnProcessor extends RuleProcessor {
 	private List<Rule> rules;
