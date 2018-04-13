@@ -82,18 +82,25 @@ public class PawnProcessorTest {
 	public void testPawnWhenClearOnTwo() {
 		RuleProcessor processor = new PawnProcessor();
 		List<Cell> cells = new ArrayList<>();
+		
+		for(int i = 0; i < 64; i++) {
+			cells.add(new Cell(CellColor.Black, new Location(i + 1, (i / 8) + 1)));
+		}
+		
 		Piece player = createPiece(PlayerColor.Lower);
 		Piece enemy = null;
 		Cell bottom = createCell(player, 7, 7);
 		Cell top = createCell(enemy, 7, 5);
 		Move theMove = new Move(bottom, top);
+		cells.set(6*8 + 6, bottom);
+		cells.set(4*8 + 6, top);
 		
 		RuleResult result = processor.GetMoveResult(cells, theMove);
 		
 		assertNotNull(result);
 		assertSame(VALID_MOVE, result.getMatchedRule().getId());
 	}
-	
+		
 	@Test
 	public void testPawnWhenBlockedOnTwo() {
 		RuleProcessor processor = new PawnProcessor();

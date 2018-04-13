@@ -27,6 +27,109 @@ public abstract class RuleProcessor {
 	 */
 	abstract protected Rule matchRule(List<Cell> cells, Move theMove, Direction direction, int numberOf);
 	
+	/**
+	 * Detects if a pieces is blocking the path horizontally
+	 * @param cells the cells of the board
+	 * @param x1 (zero-based)
+	 * @param x2 (zero-based)
+	 * @param y  the row value (zero-based)
+	 * @return
+	 */
+	protected boolean isHorizontalBlocked(List<Cell> cells, int x1, int x2, int y) {
+		boolean isBlocked = false;
+		
+		int a,b;
+		
+		if(x2 < x1) {
+			b = x1;
+			a = x2;
+		}
+		else {
+			a = x1;
+			b = x2;
+		}
+		
+		for(int i=a; i <= b; i++) {
+			if(cells.get(i + 8*y).getPiece()!=null) {
+				isBlocked = true;
+				break;
+			}
+		}
+		
+		return isBlocked;
+	}
+	
+	/**
+	 * Detects if a pieces is blocking the path vertically
+	 * @param cells the cells of the board
+	 * @param y1 (zero-based)
+	 * @param y2 (zero-based)
+	 * @param x  the column value (zero-based)
+	 * @return
+	 */
+	protected boolean isVerticalBlocked(List<Cell> cells, int y1, int y2, int x) {
+		boolean isBlocked = false;
+		int a,b;
+		
+		if(y2 < y1) {
+			b = y1;
+			a = y2;
+		}
+		else {
+			a = y1;
+			b = y2;
+		}
+		
+		for(int i=a; i <= b; i++) {
+			if(cells.get(i*8 + x).getPiece()!=null) {
+				isBlocked = true;
+				break;
+			}
+		}
+		
+		return isBlocked;
+	}
+	
+	/**
+	 * Detects if a pieces is blocking the path vertically
+	 * @param cells the cells of the board
+	 * @param y1 (zero-based)
+	 * @param y2 (zero-based)
+	 * @param x1 (zero-based)
+	 * @param x2 (zero-based) 
+	 * @return
+	 */
+	protected boolean isDiagonalBlocked(List<Cell> cells, int y1, int y2, int x1, int x2) {
+		boolean isBlocked = false;
+		int a,b,x,increment;
+		
+		if(y2 < y1) {
+			x = x2;
+			a = y2;
+			b = y1;
+			increment = -1;
+		}
+		else {
+			x = x1;
+			a = y1;
+			b = y2;
+			increment = 1;
+		}
+		
+		if(x2 < x1) {
+			increment *= -1;
+		}
+		
+		for(int i=a; i <= b; i++, x+=increment) {
+			if(cells.get(i*8 + x).getPiece()!=null) {
+				isBlocked = true;
+				break;
+			}
+		}
+		
+		return isBlocked;
+	}
+	
 	protected Direction determineDirection(PlayerColor myColor, int deltaX, int deltaY) {
 		Direction direction = null;
 				

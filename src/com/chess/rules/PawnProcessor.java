@@ -13,7 +13,7 @@ import static com.chess.rules.RuleConstants.*;
 /**
  * Pawns have their own set of rules to enforce
  * @author bradley
- * TODO: Remove Jump capability on first move
+ * 
  */
 public class PawnProcessor extends RuleProcessor {
 	private List<Rule> rules;
@@ -93,6 +93,23 @@ public class PawnProcessor extends RuleProcessor {
 					}
 					else if(enemy != null){
 						matched = null; //Can not move 2 if blocked
+					}
+					else {
+						Location fromLocation = fromCell.getLocation();
+						int x = fromLocation.getXIndex() - 1, y1, y2;
+						
+						if(toLocation.getYIndex() < fromLocation.getYIndex()) {
+							y1 = fromLocation.getYIndex() - 2;
+							y2 = toLocation.getYIndex();
+						}
+						else {
+							y1 = fromLocation.getYIndex();
+							y2 = fromLocation.getYIndex() - 2;
+						}
+						
+						if(this.isVerticalBlocked(cells, y1, y2, x)) {
+							matched = null;
+						}
 					}
 				}
 				else {
