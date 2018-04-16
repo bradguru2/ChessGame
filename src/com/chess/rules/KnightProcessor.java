@@ -21,14 +21,14 @@ public class KnightProcessor extends RuleProcessor {
 		List<Rule> theRules = new ArrayList<>();
 		
 		//Add Valid Directional Moves
-		theRules.add(new Rule(VALID_MOVE, Direction.LDownLeft, 4));
-		theRules.add(new Rule(VALID_MOVE, Direction.LDownRight, 4));
-		theRules.add(new Rule(VALID_MOVE, Direction.LRightDown, 4));
-		theRules.add(new Rule(VALID_MOVE, Direction.LLeftDown, 4));
-		theRules.add(new Rule(VALID_MOVE, Direction.LLeftUp, 4));
-		theRules.add(new Rule(VALID_MOVE, Direction.LRightUp, 4));
-		theRules.add(new Rule(VALID_MOVE, Direction.LUpRight, 4));
-		theRules.add(new Rule(VALID_MOVE, Direction.LUpLeft, 4));
+		theRules.add(new Rule(VALID_MOVE, Direction.LDownLeft, 3));
+		theRules.add(new Rule(VALID_MOVE, Direction.LDownRight, 3));
+		theRules.add(new Rule(VALID_MOVE, Direction.LRightDown, 3));
+		theRules.add(new Rule(VALID_MOVE, Direction.LLeftDown, 3));
+		theRules.add(new Rule(VALID_MOVE, Direction.LLeftUp, 3));
+		theRules.add(new Rule(VALID_MOVE, Direction.LRightUp, 3));
+		theRules.add(new Rule(VALID_MOVE, Direction.LUpRight, 3));
+		theRules.add(new Rule(VALID_MOVE, Direction.LUpLeft, 3));
 		
 		return theRules;
 	}

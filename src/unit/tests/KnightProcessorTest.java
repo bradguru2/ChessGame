@@ -55,7 +55,7 @@ public class KnightProcessorTest {
 		Piece player = createPiece(PlayerColor.Lower);
 		Piece enemy = null;
 		Cell bottom = createCell(player, 7, 7);
-		Cell top = createCell(enemy, 6, 4);
+		Cell top = createCell(enemy, 6, 5);
 		Move theMove = new Move(bottom, top);
 		
 		RuleResult result = processor.GetMoveResult(cells, theMove);
@@ -85,7 +85,7 @@ public class KnightProcessorTest {
 		Piece player = createPiece(PlayerColor.Upper);
 		Piece enemy = createPiece(PlayerColor.Lower);
 		Cell bottom = createCell(player, 7, 7);
-		Cell top = createCell(enemy, 8, 4);
+		Cell top = createCell(enemy, 8, 5);
 		Move theMove = new Move(bottom, top);
 		
 		RuleResult result = processor.GetMoveResult(cells, theMove);
@@ -102,7 +102,7 @@ public class KnightProcessorTest {
 		Piece player = createPiece(PlayerColor.Lower);
 		Piece enemy = null;
 		Cell bottom = createCell(player, 7, 4);
-		Cell top = createCell(enemy, 6, 7);
+		Cell top = createCell(enemy, 6, 6);
 		Move theMove = new Move(bottom, top);
 		
 		RuleResult result = processor.GetMoveResult(cells, theMove);

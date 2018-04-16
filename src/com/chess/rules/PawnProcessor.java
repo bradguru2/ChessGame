@@ -104,7 +104,7 @@ public class PawnProcessor extends RuleProcessor {
 						}
 						else {
 							y1 = fromLocation.getYIndex();
-							y2 = fromLocation.getYIndex() - 2;
+							y2 = toLocation.getYIndex() - 2;
 						}
 						
 						if(this.isVerticalBlocked(cells, y1, y2, x)) {

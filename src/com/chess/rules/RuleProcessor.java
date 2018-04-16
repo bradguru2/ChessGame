@@ -169,7 +169,7 @@ public abstract class RuleProcessor {
 					direction = Direction.DiagonalDownRight;
 				}
 			}
-			else if(Math.abs(deltaX) == 1 && Math.abs(deltaY) == 3) {
+			else if(Math.abs(deltaX) == 1 && Math.abs(deltaY) == 2) {
 				if(deltaX > 0 && deltaY > 0) {
 					direction = Direction.LLeftUp;
 				}
@@ -183,7 +183,7 @@ public abstract class RuleProcessor {
 					direction = Direction.LRightDown;
 				}
 			}
-			else if(Math.abs(deltaX) == 3 && Math.abs(deltaY) == 1) {
+			else if(Math.abs(deltaX) == 2 && Math.abs(deltaY) == 1) {
 				if(deltaX > 0 && deltaY > 0) {
 					direction = Direction.LUpLeft;
 				}
