@@ -293,7 +293,7 @@ public class BoardTest {
 	public void testBoardWhenUpperCheckMate() {
 		final String move1 = "e2e4";
 		final String move2 = "e7e5";
-		final String move3 = "g1h3";
+		final String move3 = "h2h3";
 		final String move4 = "f8c5";
 		final String move5 = "b1a3";
 		final String move6 = "d8f6";

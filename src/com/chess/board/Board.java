@@ -145,8 +145,8 @@ public class Board implements BoardActions{
 					}
 					break;
 				case Knight:
-					if((absDeltaX == 1 && absDeltaY == 3) || 
-					   (absDeltaX == 3 && absDeltaY == 1)){
+					if((absDeltaX == 1 && absDeltaY == 2) || 
+					   (absDeltaX == 2 && absDeltaY == 1)){
 							moves.add(new Move(fromCell, toCell));
 						}
 					break;
