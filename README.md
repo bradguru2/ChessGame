@@ -1,7 +1,12 @@
 # ChessGame
 We're having fun.  I want to learn the stuff I never had much chance to.  It is easy to miss out.  
 
-This should be run-of-the-mill but portable.  Even though I will not be spending much time on the renderer, I will just render in Console, the engine piece down to the pieces should be portable.  In such a design, I am working on how to design it correctly and decouple it from rendering surface and logic/classes.  Console Rendering will be designed for Linux.
+This should be run-of-the-mill but portable.  Even though I will not be spending much time on the renderer, I will just render in Console, the engine piece down to the pieces should be portable.  In such a design, I am working on how to design it correctly and decouple it from rendering surface and logic/classes.  Console Rendering will be designed for Linux.  *Please note that this is an Eclipse Java project.
+
+To execute in Linux Console:
+1. Open a Terminal
+2. cd to "bin" folder
+3. java com.chess.EntryPoint
 
 Logical Rules:
 https://www.chessusa.com/chess-rules.html
