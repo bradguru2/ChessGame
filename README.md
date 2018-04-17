@@ -6,6 +6,9 @@ This should be run-of-the-mill but portable.  Even though I will not be spending
 Logical Rules:
 https://www.chessusa.com/chess-rules.html
 
+Java doc:
+https://bradguru2.github.io/ChessGame/
+
 Logical Entities:
 - PlayerColor -> Upper, and Lower
 - Direction -> Forward, Back, Left, Right, DiagonalUpLeft, DiagonalUpRight,
