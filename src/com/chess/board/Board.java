@@ -6,6 +6,7 @@ import java.util.List;
 import com.chess.pieces.Ability;
 import com.chess.pieces.Piece;
 import com.chess.pieces.Player;
+import com.chess.pieces.PlayerColor;
 import com.chess.rules.BishopProcessor;
 import com.chess.rules.KingProcessor;
 import com.chess.rules.KnightProcessor;
@@ -62,8 +63,10 @@ public class Board implements BoardActions{
 	}
 	
 	private void initPieces(int playerNumber) {
-		int startRowIndex = playerNumber == 0 ? 1 : 7;
-		int endRowIndex = playerNumber == 0 ? 2 : 8;
+		int startRowIndex = players[playerNumber].getColor() == 
+				PlayerColor.Upper ? 1 : 7;
+		int endRowIndex = players[playerNumber].getColor() == 
+				PlayerColor.Upper ? 2 : 8;
 		Piece thePiece = null;
 		
 		for(int i = startRowIndex; i <= endRowIndex; i++) {
@@ -147,7 +150,7 @@ public class Board implements BoardActions{
 				case Knight:
 					if((absDeltaX == 1 && absDeltaY == 2) || 
 					   (absDeltaX == 2 && absDeltaY == 1)){
-							moves.add(new Move(fromCell, toCell));
+						moves.add(new Move(fromCell, toCell));
 						}
 					break;
 				case Bishop:

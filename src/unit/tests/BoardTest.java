@@ -82,7 +82,7 @@ public class BoardTest {
 		final int totalPieces = 32;
 		final int totalUpper = 16;
 		final int totalLower = 16;
-		int numberOfPieces = 0, upperPieces = 0, lowerPieces = 0;
+		int numberOfPieces = 0, upperPieces = 0, lowerPieces = 0, numberOfCells = 0;
 		Player player1 = new Player(PlayerColor.Upper, PlayerType.Manual, "player 1");
 		Player player2 = new Player(PlayerColor.Lower, PlayerType.Manual, "player 2");
 		BoardActions board = new Board(player1, player2);
@@ -115,8 +115,11 @@ public class BoardTest {
 					break;
 				}
 			}
+			
+			++numberOfCells;
 		}
 		
+		assertSame(totalCells, numberOfCells);
 		assertSame(totalPieces, numberOfPieces);
 		assertSame(totalUpper, upperPieces);
 		assertSame(totalLower, lowerPieces);
