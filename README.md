@@ -6,7 +6,8 @@ This should be run-of-the-mill but portable.  Even though I will not be spending
 To execute in Linux Console:
 1. Open a Terminal
 2. cd to "bin" folder
-3. java com.chess.EntryPoint
+3. javac com/chess/EntryPoint.java
+4. java com.chess.EntryPoint
 
 ![Alt text](/assets/LinuxConsoleChess.png?raw=true "Screen Shot")
 
