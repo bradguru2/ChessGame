@@ -8,6 +8,8 @@ To execute in Linux Console:
 2. cd to "bin" folder
 3. java com.chess.EntryPoint
 
+![Alt text](/assets/LinuxConsoleChess.png?raw=true "Screen Shot")
+
 Logical Rules:
 https://www.chessusa.com/chess-rules.html
 
