@@ -30,7 +30,36 @@ public class Board implements BoardActions{
 	private HashMap<Ability, RuleProcessor> processors;
 	private HashMap<Character, Integer> alphaMap;
 	
+	private String validateMoveInput(String input) {
+				
+		if(input != null) {
+			if(input.length() == 4) {
+				String validate = input.toLowerCase();
+				
+				for(int i = 0; i < 4; i++) {
+					char digit = validate.charAt(i);
+					
+					if(i==0 || i==2) {
+						if(digit < 'a' || digit > 'h') {
+							input = null;
+							break;
+						}
+					}
+					else {
+						if(digit < '1' || digit > '8') {
+							input = null;
+							break;
+						}
+					}
+				}
+			}
+			else 
+				input = null;
+		}
 		
+		return input;
+	}
+	
 	private HashMap<Character, Integer> buildAlphaMap () {
 		HashMap<Character, Integer> result = new HashMap<>();
 		
@@ -302,8 +331,8 @@ public class Board implements BoardActions{
 
 	@Override
 	public RuleResult makeMove(String move) throws IllegalMoveException {
-		if(move == null) {
-			throw new IllegalMoveException("move is null");
+		if(validateMoveInput(move) == null) {
+			throw new IllegalMoveException("move was not formatted correctly");
 		}
 		
 		boolean isCheck = false;

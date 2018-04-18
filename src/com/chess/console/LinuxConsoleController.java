@@ -108,37 +108,39 @@ public class LinuxConsoleController implements Application {
 				move = null;
 			}
 			
-			if(move.equals("quit")) {
-				return;
-			}
-			else {
-				try {
-					RuleResult result = board.makeMove(move);
-					Piece captured = result.getCapturedPiece();
-					
-					if(captured != null) {
-						System.out.println(captured.getAbility().toString() + " was captured");
-					}
-					
-					playerTurn ^= 1;
-					
-					current = playerTurn == 0 ? player1 : player2;
-					
-					if(board.kingIsInCheck(current)) {
-						isCheckMate = board.isCheckMate(current);
-						
-						if(!isCheckMate) {
-							System.out.println(current.getName() + " is in check");
+			if(move != null) {
+				if (move.equals("quit")) {
+					return;
+				} else {
+					try {
+						RuleResult result = board.makeMove(move);
+						Piece captured = result.getCapturedPiece();
+
+						if (captured != null) {
+							System.out.println(captured.getAbility().toString() + " was captured");
 						}
+
+						playerTurn ^= 1;
+
+						current = playerTurn == 0 ? player1 : player2;
+
+						if (board.kingIsInCheck(current)) {
+							isCheckMate = board.isCheckMate(current);
+
+							if (!isCheckMate) {
+								System.out.println(current.getName() + " is in check");
+							}
+						}
+
+					} catch (IllegalMoveException e) {
+						System.out.println(e);
 					}
-					
-				}
-				catch(IllegalMoveException e) {
-					System.out.println(e);
 				}
 			}
 		}
+		
 		renderBoard();
+		
 		System.out.println(current.getName() + " was checkmated. game over");
 	}
 
